@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register – EduTrack</title>
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/register.css" />
+</head>
+<body>
+
+  <div class="auth-wrapper">
+    <div class="auth-container">
+
+      <!-- ── Logo ── -->
+      <div class="auth-logo">
+        <div class="logo-icon">🎓</div>
+        <h1>EduTrack</h1>
+        <p>Sistem Monitoring Akademik</p>
+      </div>
+
+      <!-- ── Card ── -->
+      <div class="auth-card">
+        <h2>Buat Akun Baru</h2>
+        <p class="subtitle">Daftarkan diri Anda untuk mengakses sistem monitoring akademik</p>
+
+        <!-- Alert container -->
+        <div id="alert-container"></div>
+
+        <!-- Form -->
+        <form id="register-form" novalidate autocomplete="off">
+          <div class="form-grid-2">
+
+            <!-- Nama Lengkap (full width) -->
+            <div class="form-group form-group-full">
+              <label for="nama">Nama Lengkap <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  id="nama"
+                  class="form-control has-icon"
+                  placeholder="Contoh: Budi Santoso"
+                  maxlength="100"
+                  autocomplete="name"
+                />
+                <span class="input-icon">👤</span>
+              </div>
+            </div>
+
+            <!-- Username -->
+            <div class="form-group">
+              <label for="username">Username <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  id="username"
+                  class="form-control has-icon"
+                  placeholder="Min. 4 karakter"
+                  maxlength="30"
+                  autocomplete="username"
+                  spellcheck="false"
+                />
+                <span class="input-icon">🪪</span>
+              </div>
+              <div class="field-hint">Minimal 4 karakter, tanpa spasi</div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  id="email"
+                  class="form-control has-icon"
+                  placeholder="nama@domain.com"
+                  maxlength="150"
+                  spellcheck="false"
+                />
+                <span class="input-icon">📧</span>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+              <label for="password">Password <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <input
+                  type="password"
+                  id="password"
+                  class="form-control has-icon has-toggle"
+                  placeholder="Min. 6 karakter"
+                  maxlength="50"
+                />
+                <span class="input-icon">🔑</span>
+                <button type="button" class="toggle-password" data-target="password">👁</button>
+              </div>
+              <!-- Strength meter -->
+              <div class="password-strength" id="strength-container" style="display:none;">
+                <div class="strength-bar"><div class="strength-fill" id="strength-fill"></div></div>
+                <span class="strength-label" id="strength-label"></span>
+              </div>
+            </div>
+
+            <!-- Konfirmasi Password -->
+            <div class="form-group">
+              <label for="confirm-password">Konfirmasi Password <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <input
+                  type="password"
+                  id="confirm-password"
+                  class="form-control has-icon has-toggle"
+                  placeholder="Ulangi password"
+                  maxlength="50"
+                />
+                <span class="input-icon">🔒</span>
+                <button type="button" class="toggle-password" data-target="confirm-password">👁</button>
+              </div>
+              <div class="match-indicator" id="match-indicator"></div>
+            </div>
+
+          </div><!-- /form-grid-2 -->
+
+          <button type="submit" class="btn btn-primary btn-full" style="margin-top:4px;">
+            <span id="btn-text">Buat Akun Sekarang</span>
+            <span id="btn-loader" style="display:none;">⏳ Mendaftarkan...</span>
+          </button>
+
+        </form>
+
+        <div class="divider">Sudah punya akun?</div>
+
+        <a href="login.html" class="btn btn-secondary btn-full">
+          Masuk ke Akun Anda
+        </a>
+      </div>
+
+      <p class="auth-page-footer">
+        © 2024 EduTrack · <span>SDG 4 – Quality Education</span>
+      </p>
+
+    </div>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/register.js"></script>
+
+</body>
+</html>

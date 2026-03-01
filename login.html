@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login – EduTrack</title>
+  <!-- Global design system -->
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="assets/css/login.css" />
+</head>
+<body>
+
+  <div class="auth-wrapper">
+    <div class="auth-container">
+
+      <!-- ── Logo ── -->
+      <div class="auth-logo">
+        <div class="logo-icon">🎓</div>
+        <h1>EduTrack</h1>
+        <p>Sistem Monitoring Akademik</p>
+      </div>
+
+      <!-- ── Card ── -->
+      <div class="auth-card">
+        <h2>Selamat Datang</h2>
+        <p class="subtitle">Masuk untuk mengakses dashboard monitoring akademik</p>
+
+        <!-- Alert container -->
+        <div id="alert-container"></div>
+
+        <!-- Form -->
+        <form id="login-form" novalidate autocomplete="on">
+
+          <div class="form-group">
+            <label for="username">Username <span class="required">*</span></label>
+            <div class="input-wrapper">
+              <input
+                type="text"
+                id="username"
+                class="form-control has-icon"
+                placeholder="Masukkan username Anda"
+                autocomplete="username"
+                spellcheck="false"
+              />
+              <span class="input-icon">👤</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password <span class="required">*</span></label>
+            <div class="input-wrapper">
+              <input
+                type="password"
+                id="password"
+                class="form-control has-icon has-toggle"
+                placeholder="Masukkan password Anda"
+                autocomplete="current-password"
+              />
+              <span class="input-icon">🔑</span>
+              <button type="button" class="toggle-password" data-target="password" title="Tampilkan/sembunyikan">👁</button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" style="margin-top:8px;">
+            <span id="btn-text">Masuk ke Dashboard</span>
+            <span id="btn-loader" style="display:none;">⏳ Memverifikasi...</span>
+          </button>
+
+        </form>
+
+        <div class="divider">Belum punya akun?</div>
+
+        <a href="register.html" class="btn btn-secondary btn-full">
+          Buat Akun Baru – Register
+        </a>
+      </div>
+
+      <p class="auth-page-footer">
+        © 2024 EduTrack · <span>SDG 4 – Quality Education</span>
+      </p>
+
+    </div>
+  </div>
+
+  <!-- Shared auth utilities (WAJIB pertama) -->
+  <script src="assets/js/auth.js"></script>
+  <!-- Page-specific logic -->
+  <script src="assets/js/login.js"></script>
+
+</body>
+</html>

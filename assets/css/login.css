@@ -1,0 +1,84 @@
+/* =====================================================
+   EduTrack – login.css
+   Styles khusus halaman login.html
+   ===================================================== */
+
+/* ─── Auth Layout ────────────────────────────────────── */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 460px;
+  animation: fadeInUp 0.6s ease both;
+}
+
+/* ─── Logo Block ─────────────────────────────────────── */
+.auth-logo {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.auth-logo .logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: var(--radius-lg);
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-btn);
+  font-size: 28px;
+}
+.auth-logo h1 {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, var(--text-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+.auth-logo p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* ─── Auth Card ──────────────────────────────────────── */
+.auth-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+.auth-card h2 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+.auth-card .subtitle {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 32px;
+}
+
+/* ─── Page Footer ────────────────────────────────────── */
+.auth-page-footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: 24px;
+}
+.auth-page-footer span { color: var(--text-accent); }
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 520px) {
+  .auth-card { padding: 28px 20px; }
+  .auth-logo h1 { font-size: 24px; }
+}

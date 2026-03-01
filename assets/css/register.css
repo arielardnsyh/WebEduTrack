@@ -1,0 +1,95 @@
+/* =====================================================
+   EduTrack – register.css
+   Styles khusus halaman register.html
+   ===================================================== */
+
+/* ─── Auth Layout (same base as login) ───────────────── */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 500px;
+  animation: fadeInUp 0.6s ease both;
+}
+
+/* ─── Logo Block ─────────────────────────────────────── */
+.auth-logo {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.auth-logo .logo-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-radius: var(--radius-lg);
+  margin-bottom: 14px;
+  box-shadow: var(--shadow-btn);
+  font-size: 26px;
+}
+.auth-logo h1 {
+  font-size: 26px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, var(--text-accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+.auth-logo p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* ─── Auth Card ──────────────────────────────────────── */
+.auth-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 38px 40px;
+  box-shadow: var(--shadow-card), var(--shadow-glow);
+}
+.auth-card h2 {
+  font-size: 21px;
+  margin-bottom: 5px;
+}
+.auth-card .subtitle {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+/* ─── Two-column grid for form fields ────────────────── */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+.form-grid-2 .form-group-full {
+  grid-column: 1 / -1;
+}
+
+/* ─── Page Footer ────────────────────────────────────── */
+.auth-page-footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  margin-top: 20px;
+}
+.auth-page-footer span { color: var(--text-accent); }
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 560px) {
+  .auth-card { padding: 28px 18px; }
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .form-grid-2 .form-group-full { grid-column: 1; }
+}
