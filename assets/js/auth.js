@@ -1,8 +1,3 @@
-/* =====================================================
-   EduTrack – auth.js
-   Shared authentication utilities & helpers
-   Diimport oleh SEMUA halaman
-   ===================================================== */
 
 // ─── Storage Keys ────────────────────────────────────
 var KEYS = {

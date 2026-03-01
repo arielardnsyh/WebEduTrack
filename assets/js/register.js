@@ -1,8 +1,3 @@
-/* =====================================================
-   EduTrack – register.js
-   Logika khusus halaman register.html
-   Requires: auth.js (loaded before this file)
-   ===================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
 
