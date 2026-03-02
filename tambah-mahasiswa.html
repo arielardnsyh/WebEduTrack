@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tambah Mahasiswa – EduTrack</title>
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/tambah-mahasiswa.css" />
+</head>
+<body>
+
+  <div class="dashboard-layout">
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- ══ SIDEBAR ══ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="logo-badge">🎓</div>
+          <div><h2>EduTrack</h2><span>Monitoring Akademik</span></div>
+        </div>
+      </div>
+      <div class="sidebar-user">
+        <div class="user-card">
+          <div class="user-avatar" id="user-avatar">A</div>
+          <div class="user-info">
+            <div class="user-name" id="user-name">Admin</div>
+            <div class="user-role">Academic Staff</div>
+          </div>
+          <div class="user-online"></div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">Menu Utama</div>
+
+        <a href="dashboard.html" class="nav-item" data-page="dashboard.html">
+          </span> Dashboard
+        </a>
+        <a href="data-mahasiswa.html" class="nav-item" data-page="data-mahasiswa.html">
+          </span> Data Mahasiswa
+          <span class="nav-badge" id="mahasiswa-count" style="display:none;">0</span>
+        </a>
+        <a href="tambah-mahasiswa.html" class="nav-item" data-page="tambah-mahasiswa.html">
+          </span> Tambah Mahasiswa
+        </a>
+        <div class="nav-divider"></div>
+        <div class="nav-section-title">Akun</div>
+        <a href="#" class="nav-item nav-item-danger" onclick="logout(); return false;">
+      </nav>
+    </aside>
+
+    <!-- ══ MAIN ══ -->
+    <div class="main-content">
+
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+          <div>
+            <div class="topbar-title">Tambah Mahasiswa</div>
+            <div class="topbar-subtitle">Input data mahasiswa baru ke sistem</div>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <a href="data-mahasiswa.html" class="btn btn-secondary" style="padding:10px 18px;font-size:13px;">← Kembali</a>
+        </div>
+      </div>
+
+      <div class="page-content">
+
+        <!-- Alert -->
+        <div id="alert-container"></div>
+
+        <!-- Form Card -->
+        <div class="card form-card">
+          <div class="card-header">
+            <div class="card-title">
+              <div class="title-icon">🎓</div>
+              Formulir Data Mahasiswa
+            </div>
+            <span style="font-size:13px;color:var(--text-muted);">
+              <span style="color:var(--danger);">*</span> Field wajib diisi
+            </span>
+          </div>
+
+          <form id="tambah-form" novalidate>
+            <div class="card-body">
+              <div class="form-grid">
+
+                <!-- NIM -->
+                <div class="form-group">
+                  <label for="nim">NIM <span class="required"></span></label>
+                  <div class="input-wrapper">
+                    <input type="text" id="nim" class="form-control has-icon"
+                      placeholder="Min. 8 digit angka" maxlength="20" inputmode="numeric" />
+                  </div>
+                </div>
+
+                <!-- Nama -->
+                <div class="form-group">
+                  <label for="nama">Nama Lengkap <span class="required"></span></label>
+                  <div class="input-wrapper">
+                    <input type="text" id="nama" class="form-control has-icon"
+                      placeholder="Nama lengkap mahasiswa" maxlength="100" />
+                  </div>
+                </div>
+
+                <!-- Prodi -->
+                <div class="form-group">
+                  <label for="prodi">Program Studi <span class="required"></span></label>
+                  <div class="input-wrapper">
+                    <select id="prodi" class="form-control">
+                      <option value="">-- Pilih Program Studi --</option>
+                      <optgroup label="Fakultas Teknik">
+                        <option value="Teknik Informatika">Teknik Informatika</option>
+                        <option value="Sistem Informasi">Sistem Informasi</option>
+                        <option value="Teknik Elektro">Teknik Elektro</option>
+                        <option value="Teknik Sipil">Teknik Sipil</option>
+                        <option value="Teknik Mesin">Teknik Mesin</option>
+                      </optgroup>
+                      <optgroup label="Fakultas Ekonomi">
+                        <option value="Manajemen">Manajemen</option>
+                        <option value="Akuntansi">Akuntansi</option>
+                        <option value="Ekonomi Pembangunan">Ekonomi Pembangunan</option>
+                      </optgroup>
+                      <optgroup label="Fakultas Ilmu Sosial">
+                        <option value="Ilmu Komunikasi">Ilmu Komunikasi</option>
+                        <option value="Hubungan Internasional">Hubungan Internasional</option>
+                        <option value="Administrasi Publik">Administrasi Publik</option>
+                      </optgroup>
+                      <optgroup label="Fakultas MIPA">
+                        <option value="Matematika">Matematika</option>
+                        <option value="Fisika">Fisika</option>
+                        <option value="Kimia">Kimia</option>
+                        <option value="Biologi">Biologi</option>
+                      </optgroup>
+                      <optgroup label="Lainnya">
+                        <option value="Ilmu Hukum">Ilmu Hukum</option>
+                        <option value="Kedokteran">Kedokteran</option>
+                        <option value="Farmasi">Farmasi</option>
+                        <option value="Pendidikan Matematika">Pendidikan Matematika</option>
+                        <option value="Pendidikan Bahasa Indonesia">Pendidikan Bahasa Indonesia</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Angkatan -->
+                <div class="form-group">
+                  <label for="angkatan">Angkatan <span class="required"></span></label>
+                  <div class="input-wrapper">
+                    <input type="text" id="angkatan" class="form-control has-icon"
+                      placeholder="Contoh: 2022" maxlength="4" inputmode="numeric" />
+                  </div>
+                </div>
+
+                <!-- Email (full width) -->
+                <div class="form-group form-group-full">
+                  <label for="email">Email <span class="required"></span></label>
+                  <div class="input-wrapper">
+                    <input type="text" id="email" class="form-control has-icon"
+                      placeholder="nama@student.ac.id" maxlength="150" />
+                  </div>
+                </div>
+
+              </div><!-- /form-grid -->
+            </div><!-- /card-body -->
+
+            <!-- Form Footer -->
+            <div class="form-footer">
+              <a href="data-mahasiswa.html" class="btn btn-secondary">Batal</a>
+              <button type="submit" class="btn btn-success">Simpan Data Mahasiswa</button>
+            </div>
+
+          </form>
+        </div><!-- /card -->
+
+        <!-- Info hint -->
+        <div class="alert alert-info form-hint-alert">
+          <span>💡</span>
+          <span>
+            <strong>Ketentuan:</strong>
+            NIM minimal 8 digit angka · Angkatan format 4 digit (2000–sekarang) · Email harus valid mengandung "@"
+          </span>
+        </div>
+
+      </div>
+
+    
+    </div>
+
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/tambah-mahasiswa.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+/* ─── Form Card Width ────────────────────────────────── */
+.form-card { max-width: 780px; }
+
+/* ─── Two-column form grid ───────────────────────────── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.form-grid .form-group-full { grid-column: 1 / -1; }
+
+/* ─── Form Footer ────────────────────────────────────── */
+.form-footer {
+  padding: 22px 28px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* ─── Info hint card ─────────────────────────────────── */
+.form-hint-alert {
+  margin-top: 20px;
+  max-width: 780px;
+}
+
+/* ─── Responsive ─────────────────────────────────────── */
+@media (max-width: 700px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .form-grid .form-group-full { grid-column: 1; }
+  .form-footer { flex-direction: column-reverse; }
+  .form-footer .btn { width: 100%; }
+}
