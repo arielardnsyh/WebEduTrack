@@ -1,0 +1,58 @@
+
+/* ─── Search Bar ─────────────────────────────────────── */
+.search-bar { display: flex; align-items: center; gap: 10px; }
+
+.search-input-wrapper { position: relative; }
+
+.search-icon {
+  position: absolute;
+  left: 13px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.search-input {
+  background: var(--bg-input);
+  border: 1.5px solid var(--border);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  padding: 10px 16px 10px 40px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  outline: none;
+  transition: var(--transition);
+  width: 260px;
+}
+.search-input::placeholder { color: var(--text-muted); }
+.search-input:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+/* ─── Empty State ────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+}
+.empty-icon {
+  font-size: 56px;
+  margin-bottom: 20px;
+  opacity: 0.5;
+  display: block;
+}
+.empty-state h3 { font-size: 19px; font-weight: 700; margin-bottom: 8px; color: var(--text-secondary); }
+.empty-state p  { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; max-width: 300px; margin-left: auto; margin-right: auto; }
+
+/* ─── Table email column ─────────────────────────────── */
+.td-email { color: var(--text-secondary); font-size: 13px; }
+
+/* ─── Responsive tweaks ──────────────────────────────── */
+@media (max-width: 700px) {
+  .search-input { width: 180px; }
+  .card-header  { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .search-input { width: 150px; }
+}

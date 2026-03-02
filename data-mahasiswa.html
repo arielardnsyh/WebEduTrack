@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Mahasiswa – EduTrack</title>
+  <link rel="stylesheet" href="assets/css/global.css" />
+  <link rel="stylesheet" href="assets/css/dashboard.css" />
+  <link rel="stylesheet" href="assets/css/data-mahasiswa.css" />
+</head>
+<body>
+
+  <div class="dashboard-layout">
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- ══ SIDEBAR ══ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="logo-badge">🎓</div>
+          <div><h2>EduTrack</h2><span>Monitoring Akademik</span></div>
+        </div>
+      </div>
+      <div class="sidebar-user">
+        <div class="user-card">
+          <div class="user-avatar" id="user-avatar">A</div>
+          <div class="user-info">
+            <div class="user-name" id="user-name">Admin</div>
+            <div class="user-role">Academic Staff</div>
+          </div>
+          <div class="user-online"></div>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">Menu Utama</div>
+
+        <a href="dashboard.html" class="nav-item" data-page="dashboard.html">
+          </span> Dashboard
+        </a>
+        <a href="data-mahasiswa.html" class="nav-item" data-page="data-mahasiswa.html">
+          </span> Data Mahasiswa
+          <span class="nav-badge" id="mahasiswa-count" style="display:none;">0</span>
+        </a>
+        <a href="tambah-mahasiswa.html" class="nav-item" data-page="tambah-mahasiswa.html">
+          </span> Tambah Mahasiswa
+        </a>
+        <div class="nav-divider"></div>
+        <div class="nav-section-title">Akun</div>
+        <a href="#" class="nav-item nav-item-danger" onclick="logout(); return false;">
+      </nav>
+    </aside>
+
+    <!-- ══ MAIN ══ -->
+    <div class="main-content">
+
+      <div class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+          <div>
+            <div class="topbar-title">Data Mahasiswa</div>
+            <div class="topbar-subtitle">
+              Menampilkan <strong id="total-count">0</strong> mahasiswa terdaftar
+            </div>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <a href="tambah-mahasiswa.html" class="btn btn-primary" style="padding:10px 18px;font-size:13px;">Tambah Baru</a>
+        </div>
+      </div>
+
+      <div class="page-content">
+
+        <!-- Delete feedback alert -->
+        <div id="delete-alert"></div>
+
+        <!-- Table Card -->
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">
+              Daftar Semua Mahasiswa
+            </div>
+            <div class="search-bar">
+              <div class="search-input-wrapper">
+                <input
+                  type="text"
+                  id="search-input"
+                  class="search-input"
+                  placeholder="Cari nama, NIM, prodi..."
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Empty state -->
+          <div id="empty-state" class="empty-state" style="display:none;">
+            <span class="empty-icon"></span>
+            <h3>Belum Ada Data Mahasiswa</h3>
+            <p>Data yang Anda tambahkan akan tampil di sini. Mulai dengan menambahkan mahasiswa pertama.</p>
+            <a href="tambah-mahasiswa.html" class="btn btn-primary">Tambah Mahasiswa Pertama</a>
+          </div>
+
+          <!-- Table -->
+          <div id="table-wrapper" class="table-wrapper" style="display:none;">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th style="width:48px;">#</th>
+                  <th>NIM</th>
+                  <th>Nama Mahasiswa</th>
+                  <th>Program Studi</th>
+                  <th>Angkatan</th>
+                  <th>Email</th>
+                  <th style="width:110px;">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="mahasiswa-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+      
+    </div>
+
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/data-mahasiswa.js"></script>
+
+</body>
+</html>
