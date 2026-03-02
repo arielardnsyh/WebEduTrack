@@ -1,8 +1,3 @@
-/* =====================================================
-   EduTrack – login.js
-   Logika khusus halaman login.html
-   Requires: auth.js (loaded before this file)
-   ===================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
 
